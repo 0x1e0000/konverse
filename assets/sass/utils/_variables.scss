@@ -1,0 +1,80 @@
+// Primary Colors
+$color-primary-1: #4caf50;
+$color-danger: #f44336;
+$color-warning: #ff9800;
+$color-warning-light: #ffeb3b;
+
+// Secondary Colors
+$color-secondary-1: #2c3951;
+$color-secondary-2: #2f80ed;
+$color-secondary-3: #007eff;
+$color-secondary-4: #2d9cdb;
+
+// Light Colors
+$color-light-1: #f9f8fc;
+$color-light-2: #e5e5e5;
+$color-light-3: #dbdde0;
+
+// Dark Colors
+$color-dark-1: #bdbdbd;
+$color-dark-2: #a0a4a8;
+$color-dark-3: #828282;
+$color-dark-4: #52575c;
+
+//Shadow
+$shadow-1: 0px 0px 8px rgba(37, 40, 43, 0.12);
+
+// Background hover
+$dropdown-hover-item: rgba($color-secondary-3, .04);
+
+//Font sizes
+$font-size-xs: ;
+$font-size-sm: ;
+$font-size-re: ;
+$font-size-md: ;
+$font-size-lg: ;
+$font-size-xl: ;
+
+// Font Names
+$primary-font: "";
+$secondary-font: "";
+
+//==================================//
+// Don't miss with those variabeles //
+//==================================//
+
+// Breakpoint
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+// Black & White
+$black: #000000;
+$white: #ffffff;
+
+//Font Path
+$primary-light-path: "../fonts/" + $primary-font + "/" + $primary-font + "-Light.ttf";
+$primary-regular-path: "../fonts/" + $primary-font + "/" + $primary-font + "-Regular.ttf";
+$primary-medium-path: "../fonts/" + $primary-font + "/" + $primary-font + "-Medium.ttf";
+$primary-semibold-path: "../fonts/" + $primary-font + "/" + $primary-font + "-Semibold.ttf";
+$primary-bold-path: "../fonts/" + $primary-font + "/" + $primary-font + "-Bold.ttf";
+
+$secondary-light-path: "../fonts/" + $secondary-font + "/" + $secondary-font + "-Light.ttf";
+$secondary-regular-path: "../fonts/" + $secondary-font + "/" + $secondary-font + "-Regular.ttf";
+$secondary-medium-path: "../fonts/" + $secondary-font + "/" + $secondary-font + "-Medium.ttf";
+$secondary-semibold-path: "../fonts/" + $secondary-font + "/" + $secondary-font + "-Semibold.ttf";
+$secondary-bold-path: "../fonts/" + $secondary-font + "/" + $secondary-font + "-Bold.ttf";
+
+//Font Family
+$font-primary-light: $primary-font + " Light";
+$font-primary-regular: $primary-font + " Regular";
+$font-primary-medium: $primary-font + " Medium";
+$font-primary-semibold: $primary-font + " SemiBold";
+$font-primary-bold: $primary-font + " Bold";
+
+$font-secondary-light: $secondary-font + " Light";
+$font-secondary-regular: $secondary-font + " Regular";
+$font-secondary-medium: $secondary-font + " Medium";
+$font-secondary-semibold: $secondary-font + " SemiBold";
+$font-secondary-bold: $secondary-font + " Bold";
