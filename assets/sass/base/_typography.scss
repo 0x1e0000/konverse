@@ -26,18 +26,23 @@ body {
 h1 {
 	@include font-source-sans($font-primary-regular, $font-size-md, $color-black, normal, normal);
 }
+
 h2 {
 	@include font-source-sans($font-primary-bold, $font-size-md, $color-secondary-1, bold, normal);
 }
+
 h3 {
 	@include font-source-sans($font-primary-medium, $font-size-md, $color-dark-4, 500, 1.13);
 }
+
 h4 {
 	@include font-source-sans($font-primary-regular, $font-size-md, $color-dark-4, normal, normal);
 }
+
 h5 {
 	@include font-source-sans($font-primary-bold, $font-size-re, $color-dark-4, bold, normal);
 }
+
 h6 {
 	@include font-source-sans($font-primary-regular, $font-size-sm, $color-dark-4, normal, normal);
 }
@@ -52,77 +57,54 @@ a {
 
 p {
 	@include font-source-sans($font-primary-regular, $font-size-re, $color-secondary-1, bold, normal);
-	&.italic{
+	&.italic {
 		font-family: $font-primary-regular-italic;
 		font-style: italic;
 		line-height: 1.29;
 		letter-spacing: 0.1px;
-		&.light{
+		&.light {
 			font-family: $font-primary-light-italic;
 			font-weight: 300;
 		}
 	}
-	&.small{
+	&.small {
 		font-size: $font-size-sm;
-		&.italic{
+		&.italic {
 			font-family: $font-primary-regular-italic;
 			font-style: italic;
 		}
 	}
 }
 
-label {
-	// @include font-source-sans($font-primary-bold, $font-size-xl, $color-primary-1, bold, line-height);
-}
-
-a{
-	&.dropdown-item{
-		//////////////////////////
-		//////////////////////////
-		//////////////////////////
-		//////////////////////////
-		//////////////////////////
-		//////////////////////////
-		@include font-source-sans($font-secondary-medium, $font-size-xl, $color-primary-1, bold, line-height);
-		//////////////////////////
-		//////////////////////////
-		//////////////////////////
-		//////////////////////////
-		//////////////////////////
-		//////////////////////////
+a {
+	&.dropdown-item {
+		@include font-source-sans($font-secondary-regular, $font-size-re, $color-dark-3, normal, 1.29);
 	}
-	&.bold{
-
+	&.bold {
+		@include font-source-sans($font-secondary-medium, $font-size-re, $color-secondary-3, 500, 1.29);
 	}
 }
 
 @include for-size(phone-only) {
 	h1 {
-		// font-size: ;
-		// line-height: ;
+		font-size: $font-size-re;
 	}
 	h2 {
-		// font-size: ;
-		// line-height: ;
+		font-size: $font-size-re;
 	}
 	h3 {
-		// font-size: ;
-		// line-height: ;
+		font-size: $font-size-re;
 	}
 	h4 {
-		// font-size: ;
-		// line-height: ;
+		font-size: $font-size-re;
 	}
 	h5 {
-		// font-size: ;
-		// line-height: ;
+		font-size: $font-size-sm;
 	}
 	h6 {
-		// font-size: ;
-		// line-height: ;
+		font-size: $font-size-sm;
 	}
 	p {
-		// font-size: ;
-		// line-height: ;
+		font-size: $font-size-sm;
 	}
 }
