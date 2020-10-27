@@ -20,7 +20,6 @@
 
 	<!-- Favicon
 	================================================== -->
-	<link rel="shortcut icon" href="./assets/img/favicon/favicon.ico">
 </head>
 
 <body>
@@ -39,7 +38,7 @@
 			<div class="main__inbox">
 				<div class="main__inbox__header">
 					<div class="main__inbox__header__dropdown">
-						<div class="dropdown dropdown-bold">
+						<div class="dropdown dropdown-bold" id="dropdown-my-inbox">
 							<button class="dropdown-toggle" type="button" id="dropdown-my-inbox" data-toggle="dropdown"
 								aria-haspopup="true" aria-expanded="false">
 								My Inbox
@@ -122,9 +121,12 @@
 								</button>
 							</div>
 						</div>
+						<form action="" id="search-contact-field" class="d-none w-100" style="margin-right: 18px;">
+							<input type="text" placeholder="search ..." class="w-100">
+						</form>
 					</div>
 					<div class="main__inbox__header__icons">
-						<button class="main__inbox__header__icons__search">
+						<button class="main__inbox__header__icons__search" id="search-contact">
 							<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
 								xmlns="http://www.w3.org/2000/svg">
 								<path
@@ -134,10 +136,19 @@
 									stroke-linejoin="round" />
 							</svg>
 						</button>
-						<input class="d-none" type="text" placeholder="search ...">
+
+						<button class="d-none" id="search-contact-close">
+							<svg width="24" height="14" viewBox="0 0 14 14" fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<path d="M13 13L1 1" stroke="#A0A4A8" stroke-width="2" stroke-linecap="round"
+									stroke-linejoin="round" />
+								<path d="M13 0.999999L1 13" stroke="#A0A4A8" stroke-width="2" stroke-linecap="round"
+									stroke-linejoin="round" />
+							</svg>
+						</button>
 
 						<button class="main__inbox__header__icons__favorite">
-							<svg width="22" height="22" viewBox="0 0 22 22" fill="none"
+							<svg id="star-conversations" width="22" height="22" viewBox="0 0 22 22" fill="none"
 								xmlns="http://www.w3.org/2000/svg">
 								<path
 									d="M11 1L14.09 7.26L21 8.27L16 13.14L17.18 20.02L11 16.77L4.82 20.02L6 13.14L1 8.27L7.91 7.26L11 1Z"
@@ -170,8 +181,157 @@
 						</button>
 					</div>
 				</div>
-				<div class="main__contacts">
-
+				<div class="main__inbox">
+					<div class="contact unreaded active">
+						<div class="contact__left">
+							<div class="contact__left__name">
+								<img src="./assets/img/icons/world.svg" alt="">
+								<h2>John Doe</h2>
+							</div>
+							<div class="contact__left__message">
+								<img src="./assets/img/icons/arrow-left.svg" alt="">
+								<p class="small italic">What yu’re looking for is prob...</p>
+							</div>
+							<div class="contact__left__info">
+								<img src="./assets/img/icons/check.svg" alt="">
+								<p class="small contact-kind sales">Sales</p>
+								<div class="person">
+									<img src="./assets/img/icons/user.svg" alt="">
+									<p class="small">Tarun Agarwal</p>
+								</div>
+							</div>
+						</div>
+						<div class="contact__right">
+							<div class="contact__right__notification">4</div>
+							<p class="small">24 months ago</p>
+							<p class="contact__right__is-visitor">Visitor</p>
+						</div>
+					</div>
+					<div class="contact">
+						<div class="contact__left">
+							<div class="contact__left__name">
+								<img src="./assets/img/icons/facebook.svg" alt="">
+								<h2>Abhishek</h2>
+							</div>
+							<div class="contact__left__message">
+								<img src="./assets/img/icons/arrow-right.svg" alt="">
+								<p class="small italic">What yu’re looking for is prob...</p>
+							</div>
+							<div class="contact__left__info">
+								<img src="./assets/img/icons/check.svg" alt="">
+								<p class="small contact-kind support">Support</p>
+								<div class="person">
+									<img src="./assets/img/icons/user.svg" alt="">
+									<p class="small">Tarun Agarwal</p>
+								</div>
+							</div>
+						</div>
+						<div class="contact__right">
+							<div class="contact__right__notification invisible"></div>
+							<p class="small">3 minutes ago</p>
+							<p class="contact__right__is-visitor">Visitor</p>
+						</div>
+					</div>
+					<div class="contact warning">
+						<div class="contact__left">
+							<div class="contact__left__name">
+								<img src="./assets/img/icons/message.svg" alt="">
+								<h2>Abhishek</h2>
+							</div>
+							<div class="contact__left__message">
+								<img src="./assets/img/icons/arrow-right.svg" alt="">
+								<p class="small italic">What yu’re looking for is prob...</p>
+							</div>
+							<div class="contact__left__info">
+								<img src="./assets/img/icons/check.svg" class="invisible" alt="">
+								<p class="small contact-kind support">Support</p>
+								<div class="person">
+									<img src="./assets/img/icons/user.svg" alt="">
+									<p class="small">Tarun Agarwal</p>
+								</div>
+							</div>
+						</div>
+						<div class="contact__right">
+							<div class="contact__right__notification invisible"></div>
+							<p class="small">few seconds ago</p>
+							<p class="contact__right__is-visitor invisible">Visitor</p>
+						</div>
+					</div>
+					<div class="contact">
+						<div class="contact__left">
+							<div class="contact__left__name">
+								<img src="./assets/img/icons/message.svg" alt="">
+								<h2>Abhishek</h2>
+							</div>
+							<div class="contact__left__message">
+								<img src="./assets/img/icons/arrow-right.svg" class="invisible" alt="">
+								<p class="small italic">What yu’re looking for is prob...</p>
+							</div>
+							<div class="contact__left__info">
+								<img src="./assets/img/icons/check.svg" class="invisible" alt="">
+								<p class="small contact-kind support">Support</p>
+								<div class="person">
+									<img src="./assets/img/icons/user.svg" class="invisible" alt="">
+									<p class="small">Tarun Agarwal</p>
+								</div>
+							</div>
+						</div>
+						<div class="contact__right">
+							<div class="contact__right__notification invisible"></div>
+							<p class="small">3 minutes ago</p>
+							<p class="contact__right__is-visitor">Visitor</p>
+						</div>
+					</div>
+					<div class="contact">
+						<div class="contact__left">
+							<div class="contact__left__name">
+								<img src="./assets/img/icons/message.svg" alt="">
+								<h2>Abhishek</h2>
+							</div>
+							<div class="contact__left__message">
+								<img src="./assets/img/icons/arrow-right.svg" class="invisible" alt="">
+								<p class="small italic">What yu’re looking for is prob...</p>
+							</div>
+							<div class="contact__left__info">
+								<img src="./assets/img/icons/check.svg" class="invisible" alt="">
+								<p class="small contact-kind support">Support</p>
+								<div class="person">
+									<img src="./assets/img/icons/user.svg" class="invisible" alt="">
+									<p class="small">Tarun Agarwal</p>
+								</div>
+							</div>
+						</div>
+						<div class="contact__right">
+							<div class="contact__right__notification invisible"></div>
+							<p class="small">3 minutes ago</p>
+							<p class="contact__right__is-visitor invisible">Visitor</p>
+						</div>
+					</div>
+					<div class="contact">
+						<div class="contact__left">
+							<div class="contact__left__name">
+								<img src="./assets/img/icons/message.svg" alt="">
+								<h2>Abhishek</h2>
+							</div>
+							<div class="contact__left__message">
+								<img src="./assets/img/icons/arrow-right.svg" class="invisible" alt="">
+								<p class="small italic">What yu’re looking for is prob...</p>
+							</div>
+							<div class="contact__left__info">
+								<img src="./assets/img/icons/check.svg" class="invisible" alt="">
+								<p class="small contact-kind support">Support</p>
+								<div class="person">
+									<img src="./assets/img/icons/user.svg" class="invisible" alt="">
+									<p class="small">Tarun Agarwal</p>
+								</div>
+							</div>
+						</div>
+						<div class="contact__right">
+							<div class="contact__right__notification invisible"></div>
+							<p class="small">3 minutes ago</p>
+							<p class="contact__right__is-visitor invisible">Visitor</p>
+						</div>
+					</div>
 				</div>
 			</div>
 			<div class="main__messanger">
@@ -209,17 +369,30 @@
 				</div>
 				<div class="main__messanger__container">
 					<div class="main__messanger__container__messages">
-
+						<div class="dropdown" id="menu-canned-response">
+							<button class="dropdown-item" value="Menu-item-1">
+								/ Menu item 1
+								<p class="light italic">Hand over conversation to chatbot</p>
+							</button>
+							<button class="dropdown-item" value="Menu-item-2">
+								/ Menu item 2
+							</button>
+							<button class="dropdown-item" value="Menu-item-3">
+								/ Menu item 3
+							</button>
+						</div>
 					</div>
 					<div class="main__messanger__container__editor">
 						<div class="text-field">
-							<textarea placeholder="Shift + Enter to add a new line; Type '/' to from a Canned Response">
-							</textarea>
+							<textarea id="message-text-field"
+								placeholder="Shift + Enter to add a new line; Type '/' to from a Canned Response"
+								value=""></textarea>
 							<div class="dropup" id="show-emoji">
 								<button type="button" class="icon dropdown-toggle" data-toggle="dropdown"
 									aria-haspopup="true" aria-expanded="false">
 									<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-										xmlns="http://www.w3.org/2000/svg">
+										xmlns="http://www.w3.org/2000/svg" data-toggle="tooltip" data-placement="top"
+										title="emojis">
 										<path
 											d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
 											stroke="#BDBDBD" stroke-width="2" stroke-linecap="round"
@@ -239,7 +412,8 @@
 						</div>
 						<div class="footer">
 							<div class="editors">
-								<label for="send-attachment" class="icon mb-0">
+								<label for="send-attachment" class="icon mb-0" data-toggle="tooltip"
+									data-placement="top" title="Attach files">
 									<svg width="15" height="15" viewBox="0 0 16 16" fill="none"
 										xmlns="http://www.w3.org/2000/svg">
 										<g clip-path="url(#clip0)">
@@ -256,7 +430,8 @@
 									</svg>
 								</label>
 								<input type="file" class="d-none" id="send-attachment"></input>
-								<button class="icon" id="bold-text">
+								<button class="icon" id="bold-text" data-toggle="tooltip" data-placement="top"
+									title="Bold">
 									<svg width="16" height="16" viewBox="0 0 16 16" fill="none"
 										xmlns="http://www.w3.org/2000/svg">
 										<path
@@ -269,7 +444,8 @@
 											stroke-linejoin="round" />
 									</svg>
 								</button>
-								<button class="icon" id="italic-text">
+								<button class="icon" id="italic-text" data-toggle="tooltip" data-placement="top"
+									title="Italic">
 									<svg width="16" height="16" viewBox="0 0 16 16" fill="none"
 										xmlns="http://www.w3.org/2000/svg">
 										<path d="M12.6667 2.66663H6.66666" stroke="#BDBDBD" stroke-width="2"
@@ -280,7 +456,8 @@
 											stroke-linecap="round" stroke-linejoin="round" />
 									</svg>
 								</button>
-								<button class="icon" id="underline-text">
+								<button class="icon" id="underline-text" data-toggle="tooltip" data-placement="top"
+									title="underline">
 									<svg width="16" height="16" viewBox="0 0 16 16" fill="none"
 										xmlns="http://www.w3.org/2000/svg">
 										<path
@@ -291,7 +468,8 @@
 											stroke-linecap="round" stroke-linejoin="round" />
 									</svg>
 								</button>
-								<button class="icon" id="star-text">
+								<button class="icon" id="star-text" data-toggle="tooltip" data-placement="top"
+									title="star">
 									<svg width="16" height="16" viewBox="0 0 16 16" fill="none"
 										xmlns="http://www.w3.org/2000/svg">
 										<path
@@ -300,7 +478,8 @@
 											stroke-linejoin="round" />
 									</svg>
 								</button>
-								<button class="icon" id="clipboard">
+								<button class="icon" id="clipboard" data-toggle="tooltip" data-placement="top"
+									title="clipboard">
 									<svg width="16" height="16" viewBox="0 0 16 16" fill="none"
 										xmlns="http://www.w3.org/2000/svg">
 										<path
@@ -313,7 +492,8 @@
 											stroke-linejoin="round" />
 									</svg>
 								</button>
-								<button class="icon" id="address">
+								<button class="icon" id="address" data-toggle="tooltip" data-placement="top"
+									title="address">
 									<svg width="16" height="16" viewBox="0 0 16 16" fill="none"
 										xmlns="http://www.w3.org/2000/svg">
 										<path
@@ -328,7 +508,8 @@
 								</button>
 							</div>
 							<div class="actions">
-								<button class="icon" id="voice-call">
+								<button class="icon" id="voice-call" data-toggle="tooltip" data-placement="top"
+									title="Voice call">
 									<svg width="20" height="20" viewBox="0 0 20 20" fill="none"
 										xmlns="http://www.w3.org/2000/svg">
 										<g clip-path="url(#clip0)">
@@ -348,7 +529,8 @@
 										</defs>
 									</svg>
 								</button>
-								<button id="send-message" class="button primary">
+								<button id="send-message" class="button primary" data-toggle="tooltip"
+									data-placement="top" title="Send message">
 									<svg width="22" height="22" viewBox="0 0 22 22" fill="none"
 										xmlns="http://www.w3.org/2000/svg">
 										<path d="M20 2L10 12" stroke="white" stroke-width="2" stroke-linecap="round"
@@ -384,27 +566,106 @@
 					</div>
 				</div>
 				<div class="main__profile__info">
-					<div class="d-flex">
-						<img class="mr-5" src="./assets/img/icons/loacation.svg" alt="">
-						<p>Bengaluru, India <span>(Asia/Kolkata)</span>
-						</p>
-					</div>
-					<div class="d-flex mt-4">
-						<p class="mr-5 ml-1">IP</p>
-						<p>104.168.19.20</p>
-					</div>
-					<div class="d-flex justify-content-between pt-4">
-						<a href="#"><img src="./assets/img/icons/chrome.png" alt=""></a>
-						<a href="#"><img src="./assets/img/icons/apple.png" alt=""></a>
-						<a href="#"><img src="./assets/img/icons/laptop.png" alt=""></a>
-						<a href="#"><img src="./assets/img/icons/link.svg" class="mr-2" alt="">Chat Link</a>
+					<table class="w-100">
+						<tbody>
+							<tr>
+								<th><img class="mr-5" src="./assets/img/icons/loacation.svg" alt="locations"></th>
+								<td>
+									<p>Bengaluru, India <span class="italic">(Asia/Kolkata)</span></p>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									<p class="mr-5 ml-1 mt-4 grey">IP</p>
+								</th>
+								<td>
+									<p>104.168.19.20</p>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="pt-4 d-flex">
+						<a href="#" class="mr-4"><img src="./assets/img/icons/chrome.svg" alt=""></a>
+						<a href="#" class="mr-4"><img src="./assets/img/icons/apple.svg" alt=""></a>
+						<a href="#" class="mr-4"><img src="./assets/img/icons/laptop.svg" alt=""></a>
+						<a href="#"><img src="./assets/img/icons/link.svg" class="mr-2" alt=""><span class="small">Chat
+								Link</span></a>
 					</div>
 				</div>
 				<div class="main__profile__contacts">
-
+					<table class="w-100">
+						<tbody>
+							<tr>
+								<th><img class="mr-4" src="./assets/img/icons/mail.svg" alt="mail"></th>
+								<td>
+									<p class="ml-3 my-2"><a href="mailto:someone@gmail.com">someone@gmail.com</a></p>
+								</td>
+							</tr>
+							<tr>
+								<th><img class="mr-4" src="./assets/img/icons/phone.svg" alt="phone"></th>
+								<td>
+									<p class="ml-3 my-2">+1 9870 5678 789</p>
+								</td>
+							</tr>
+							<tr>
+								<th><img class="mr-4" src="./assets/img/icons/whatsapp.svg" alt="whatsapp"></th>
+								<td>
+									<p class="ml-3 my-2">+1 9870 5678 789</p>
+								</td>
+							</tr>
+							<tr>
+								<th><img class="mr-4" src="./assets/img/icons/messanger.svg" alt="messanger"></th>
+								<td>
+									<p class="ml-3 my-2"><a href="mailto:someone@gmail.com">someone@gmail.com</a></p>
+								</td>
+							</tr>
+						</tbody>
+					</table>
 				</div>
-				<div class="main__profile__properties"></div>
-				<div class="main__profile__footprint"></div>
+				<div class="main__profile__properties">
+					<h5>User Properties</h5>
+					<table class="w-100">
+						<tbody>
+							<tr>
+								<th>
+									<p class="small">First seen</p>
+								</th>
+								<td>
+									<p class="my-2">Oct 15, 2020 11:35am</p>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									<p class="small">Sessions</p>
+								</th>
+								<td>
+									<p class="my-2">2</p>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									<p class="small">Tags</p>
+								</th>
+								<td>
+									<form action="" class="my-2">
+										<input class="py-2" type="text" placeholder="Some Tags" value="">
+									</form>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									<p class="small">WhatsApp <br> Subscription</p>
+								</th>
+								<td>
+									<p class="my-2">Yes</p>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="main__profile__footprint border-0">
+					<h5>Footprint</h5>
+				</div>
 			</div>
 			<div class="main__brands">
 				<div class="main__brands__header">

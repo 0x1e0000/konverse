@@ -63,7 +63,8 @@ a {
 	letter-spacing: 0.1px;
 }
 
-p {
+p,
+span {
 	@include font-source-sans($font-primary-regular, $font-size-re, $color-secondary-1, normal, normal);
 	&.italic {
 		font-family: $font-primary-regular-italic;

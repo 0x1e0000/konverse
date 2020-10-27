@@ -1,0 +1,102 @@
+.contact {
+	cursor: pointer;
+	padding: 10px 12px;
+	@include flex(space-between, center);
+	border-bottom: $grid-border;
+	&.unreaded {
+		position: relative;
+		&::after {
+			content: "";
+			display: inline-block;
+			position: absolute;
+			width: 5px;
+			background-color: $color-danger;
+			right: 0;
+			top: -1px;
+			bottom: -1px;
+		}
+	}
+	&.warning {
+		position: relative;
+		&::after {
+			content: "";
+			display: inline-block;
+			position: absolute;
+			width: 5px;
+			background-color: $color-warning;
+			right: 0;
+			top: 0;
+			bottom: 0;
+		}
+	}
+	&:hover,
+	&.active {
+		background-color: $color-light-1;
+	}
+	&__left {
+		&__name {
+			@include flex(flex-start, center);
+			h2 {
+				margin-left: 12px;
+			}
+		}
+		&__message {
+			@include flex(flex-start, center);
+			margin-left: 33px;
+			margin-top: 6px;
+
+			img {
+				margin-right: 6px;
+			}
+			p {
+				color: $color-dark-3;
+			}
+		}
+		&__info {
+			margin-top: 13px;
+			@include flex(space-between, center);
+
+			.contact-kind {
+				border-radius: 24px;
+				padding: 2px 8px;
+
+				&.sales {
+					background-color: $color-secondary-2;
+					color: $color-white;
+				}
+				&.support {
+					background-color: $color-warning-light;
+					color: $color-black;
+				}
+			}
+			.person {
+				display: flex;
+				align-items: center;
+				img {
+					margin-right: 3px;
+				}
+				p {
+					color: $color-dark-3;
+				}
+			}
+		}
+	}
+	&__right {
+		text-align: center;
+		&__notification {
+			width: 24px;
+			height: 24px;
+			background-color: $color-danger;
+			color: $color-white;
+			border-radius: 50px;
+			@include flex(center, center);
+			margin: 0 auto 8px;
+		}
+		&__is-visitor {
+			margin-top: 15px;
+			border-radius: 24px;
+			border: $grid-border;
+			font-size: $font-size-sm;
+		}
+	}
+}
