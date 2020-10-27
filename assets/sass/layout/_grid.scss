@@ -101,6 +101,10 @@
 								stroke: $color-secondary-2;
 							}
 						}
+						&.dropdown-toggle {
+							background-color: $color-white;
+							border-radius: 50px;
+						}
 					}
 					.text-field {
 						position: relative;
@@ -174,6 +178,14 @@
 						color: $color-dark-2;
 						font-size: 11px;
 					}
+				}
+			}
+			&__info {
+				padding: 14px;
+				border-bottom: $grid-border;
+
+				.location {
+					@include flex(space-between, center);
 				}
 			}
 		}
