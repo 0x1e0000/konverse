@@ -1,0 +1,193 @@
+.grid-container {
+	height: 100vh;
+	display: grid;
+	grid-template-columns: 65px 1fr;
+	grid-template-rows: 55px 1fr;
+	grid-template-areas:
+		"sidenav header"
+		"sidenav main";
+
+	.main-header {
+		grid-area: header;
+		border-bottom: $grid-border;
+		padding: 12px 14px;
+		@include flex(space-between, center);
+	}
+
+	.sidenav {
+		grid-area: sidenav;
+		background-color: $color-secondary-1;
+		padding: 10px;
+		text-align: center;
+	}
+
+	.main {
+		grid-area: main;
+		display: grid;
+		grid-template-columns: 0.67fr 1fr 0.46fr 55px;
+		grid-template-rows: 1fr;
+
+		&__inbox {
+			&__header {
+				padding: 12px 14px;
+				border-bottom: $grid-border;
+				height: 60px;
+				@include flex(space-between, center);
+
+				&__dropdown {
+					margin-right: 18px;
+					flex: 1;
+					.dropdown {
+						.dropdown-toggle,
+						.dropdown-menu {
+							width: 100%;
+						}
+					}
+				}
+				&__icons {
+					button {
+						cursor: pointer;
+						background: none;
+						&:hover {
+							svg path {
+								stroke: $color-secondary-2;
+							}
+						}
+					}
+					&__favorite {
+						margin: 0 22px;
+					}
+				}
+			}
+		}
+
+		&__messanger {
+			border-left: $grid-border;
+			border-right: $grid-border;
+			background-color: $color-light-1;
+
+			&__header {
+				padding: 12px 14px;
+				border-bottom: $grid-border;
+				height: 60px;
+				background-color: $color-white;
+				@include flex(space-between, center);
+			}
+			&__container {
+				position: relative;
+				height: calc(100vh - 115px);
+
+				&__messages {
+					height: calc(100vh - (115px + 120px + 17px * 2));
+					overflow-x: auto;
+					padding: 13px 13px 0;
+				}
+				&__editor {
+					height: 120px;
+					background-color: $color-white;
+					position: absolute;
+					bottom: 17px;
+					left: 13px;
+					right: 13px;
+					border-radius: 4px;
+					border: 1px solid $color-dark-2;
+					overflow: hidden;
+
+					.icon {
+						background: none;
+						cursor: pointer;
+						&:hover {
+							svg path {
+								stroke: $color-secondary-2;
+							}
+						}
+					}
+					.text-field {
+						position: relative;
+						width: 100%;
+						height: 80px;
+						textarea {
+							width: 100%;
+							height: 100%;
+							border: none;
+							resize: none;
+						}
+						#show-emoji {
+							position: absolute;
+							bottom: 8px;
+							right: 8px;
+							.icon::after {
+								display: none;
+							}
+						}
+					}
+
+					.footer {
+						border-top: 1px solid $color-dark-2;
+						width: 100%;
+						height: 40px;
+						@include flex(space-between, stretch);
+						.editors {
+							@include flex(flex-start, center);
+							padding-left: 5px;
+							position: relative;
+							bottom: 2px;
+							button {
+								margin: 0 5px;
+							}
+						}
+						.actions {
+							#send-message {
+								border-radius: 0;
+								padding: 10px;
+								height: 100%;
+								margin-left: 10px;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		&__profile {
+			&__header {
+				padding: 4px 14px;
+				border-bottom: $grid-border;
+				height: 60px;
+				@include flex(flex-start, center);
+				&__avatar {
+					border-radius: 50px;
+					overflow: hidden;
+					margin-right: 13px;
+				}
+				&__info {
+					a {
+						display: flex;
+						align-items: center;
+						&:hover {
+							svg path {
+								stroke: $color-secondary-2;
+							}
+						}
+					}
+					p {
+						color: $color-dark-2;
+						font-size: 11px;
+					}
+				}
+			}
+		}
+
+		&__brands {
+			border-left: $grid-border;
+			text-align: center;
+			&__header {
+				display: grid;
+				place-content: center;
+				padding: 5px;
+				border-bottom: $grid-border;
+				height: 60px;
+			}
+		}
+	}
+}

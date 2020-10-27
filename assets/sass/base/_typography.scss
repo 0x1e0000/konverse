@@ -49,12 +49,18 @@ h6 {
 	@include font-source-sans($font-primary-regular, $font-size-sm, $color-dark-4, normal, normal);
 }
 
-button {
+button,
+.button {
 	@include font-source-sans($font-primary-regular, $font-size-md, $color-white, normal, normal);
 }
 
 a {
 	@include font-source-sans($font-secondary-medium, $font-size-re, $color-secondary-1, normal, 1.29);
+}
+
+.dropdown-item {
+	@include font-source-sans($font-secondary-regular, $font-size-re, $color-dark-3, normal, 1.29);
+	letter-spacing: 0.1px;
 }
 
 p {
@@ -78,14 +84,9 @@ p {
 	}
 }
 
-a {
-	&.dropdown-item {
-		@include font-source-sans($font-secondary-regular, $font-size-re, $color-dark-3, normal, 1.29);
-		letter-spacing: 0.1px;
-		&.bold {
-			@include font-source-sans($font-secondary-medium, $font-size-re, $color-secondary-3, 500, 1.29);
-		}
-	}
+textarea,
+input {
+	@include font-source-sans($font-primary-regular, $font-size-re, $color-dark-4, normal, normal);
 }
 
 @include for-size(phone-only) {

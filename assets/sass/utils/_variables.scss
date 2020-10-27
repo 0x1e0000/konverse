@@ -1,5 +1,5 @@
 // Primary Colors
-$color-primary-1: #4caf50;
+$color-primary: #4caf50;
 $color-danger: #f44336;
 $color-warning: #ff9800;
 $color-warning-light: #ffeb3b;
@@ -24,14 +24,14 @@ $color-dark-4: #52575c;
 //Shadow
 $shadow-1: 0px 0px 8px rgba(37, 40, 43, 0.12);
 
-// Background hover
-$dropdown-hover-item: rgba($color-secondary-3, .04);
-
 //Font sizes
 $font-size-sm: 12px;
 $font-size-re: 14px;
 $font-size-md: 16px;
 $font-size-lg: 20px;
+
+// Borders
+$grid-border: 1px solid $color-light-2;
 
 // Font Names
 $font-primary: "Roboto";

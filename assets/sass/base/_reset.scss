@@ -46,6 +46,7 @@ h5,
 h6 {
 	display: block;
 	font-weight: 700;
+	margin: 0;
 }
 
 i {
@@ -192,4 +193,8 @@ input::-moz-focus-inner {
 textarea {
 	overflow: auto; /* 1 */
 	vertical-align: top; /* 2 */
+}
+
+p {
+	margin: 0;
 }

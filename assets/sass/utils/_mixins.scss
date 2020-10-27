@@ -22,32 +22,6 @@
 	}
 }
 
-// Ripple effect for buttons
-// @mixin ripple-effect {
-// 	display: inline-block;
-// 	position: relative;
-// 	overflow: hidden;
-
-// 	&::before {
-// 		content: "";
-// 		position: absolute;
-// 		background-color: $background;
-// 		padding: 50%;
-// 		border-radius: 50%;
-// 		left: calc(100% * var(--ripple-x));
-// 		top: calc(100% * var(--ripple-y));
-// 		transform: translate(-50%, -50%) scale(1);
-// 		opacity: 0;
-// 		transition: transform 600ms, opacity 600ms;
-// 	}
-// 	&:active::before {
-// 		transition: 0s;
-// 		opacity: 1;
-// 		transform: translate(-50%, -50%) scale(0);
-// 	}
-// }
-
-// Flexbox
 @mixin flex($justify, $align) {
 	display: flex;
 	justify-content: $justify;
@@ -72,7 +46,7 @@
 	}
 }
 
-@mixin input-placeholder {
+@mixin placeholder {
 	&.placeholder {
 		@content;
 	}
@@ -99,15 +73,3 @@
 		src: url($ttf-path) format("truetype");
 	}
 }
-
-// @mixin fade($type) {
-// 	@if $type== "hide" {
-// 		visibility: hidden;
-// 		opacity: 0;
-// 		transition: visibility 1s, opacity 1s;
-// 	} @else if $type== "show" {
-// 		visibility: visible;
-// 		opacity: 1;
-// 		transition: visibility 1s, opacity 1s;
-// 	}
-// }

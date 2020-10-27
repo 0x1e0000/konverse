@@ -1,1 +1,10 @@
-// Inputs & Placeholders Style
+textarea,
+input {
+	padding: 12px 10px;
+	border: solid 1px $color-dark-2;
+	background-color: $color-white;
+	border-radius: 4px;
+	@include placeholder {
+		color: $color-dark-1;
+	}
+}
