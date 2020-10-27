@@ -1,6 +1,8 @@
 /*=== Import Fonts ===*/
 @include font-face($font-primary-light, $font-primary-light-path);
+@include font-face($font-primary-light-italic, $font-primary-light-italic-path);
 @include font-face($font-primary-regular, $font-primary-regular-path);
+@include font-face($font-primary-regular-italic, $font-primary-regular-italic-path);
 @include font-face($font-primary-medium, $font-primary-medium-path);
 @include font-face($font-primary-semibold, $font-primary-semibold-path);
 @include font-face($font-primary-bold, $font-primary-bold-path);
@@ -15,7 +17,7 @@
 body {
 	color: $color-secondary-1;
 	font-size: $font-size-re;
-	font-family: $font-primary-regular, sans-serif;
+	font-family: $font-primary-regular;
 	font-style: normal;
 	font-weight: normal;
 	font-stretch: normal;
@@ -56,7 +58,7 @@ a {
 }
 
 p {
-	@include font-source-sans($font-primary-regular, $font-size-re, $color-secondary-1, bold, normal);
+	@include font-source-sans($font-primary-regular, $font-size-re, $color-secondary-1, normal, normal);
 	&.italic {
 		font-family: $font-primary-regular-italic;
 		font-style: italic;
@@ -79,9 +81,10 @@ p {
 a {
 	&.dropdown-item {
 		@include font-source-sans($font-secondary-regular, $font-size-re, $color-dark-3, normal, 1.29);
-	}
-	&.bold {
-		@include font-source-sans($font-secondary-medium, $font-size-re, $color-secondary-3, 500, 1.29);
+		letter-spacing: 0.1px;
+		&.bold {
+			@include font-source-sans($font-secondary-medium, $font-size-re, $color-secondary-3, 500, 1.29);
+		}
 	}
 }
 
