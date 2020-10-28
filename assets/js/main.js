@@ -34,10 +34,10 @@ $(() => {
 
 	// Detect filter multiple sellect height
 	$("#miltiselect-filter").attr("size", $("#miltiselect-filter option").length);
+
+	// Toggle Filter dropdown & togglt icon filter active color
+	$(".filter-icon").click((e) => {
+		$(e.target).toggleClass("active");
+		$(".filter-icon + form > .miltiselect").toggleClass("show");
+	});
 });
-
-// Toggle filter Multiple select
-function show_filter() {
-	$("#miltiselect-filter").toggleClass("show");
-
-}

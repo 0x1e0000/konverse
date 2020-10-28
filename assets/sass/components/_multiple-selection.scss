@@ -1,7 +1,6 @@
 .miltiselect {
 	position: absolute;
-	top: 100%;
-	left: 0;
+	top: 113%;
 	right: 0;
 	z-index: 9;
 	width: 100%;
@@ -20,7 +19,7 @@
 		padding: 10px;
 		display: block;
 		color: $color-secondary-1;
-		// background-color: white;
+		padding-left: 25px;
 		&:hover {
 			background-color: rgba($color-secondary-3, 0.04);
 			color: $color-secondary-3;
@@ -33,7 +32,8 @@
 		&[data-divider="true"] {
 			font-size: $font-size-sm;
 			color: $color-dark-3;
-			padding-bottom: 0;
+			// padding-bottom: 0;
+			padding-left: 10px;
 
 			&:hover {
 				background-color: white;

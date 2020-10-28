@@ -3088,17 +3088,17 @@ input[type="checkbox"] + label::after { content: ""; display: block; width: 14px
 
 input[type="checkbox"]:checked + label::after { background-image: url("../img/icons/check.svg"); }
 
-.miltiselect { position: absolute; top: 100%; left: 0; right: 0; z-index: 9; width: 100%; -webkit-box-shadow: 0px 0px 8px rgba(37, 40, 43, 0.12); box-shadow: 0px 0px 8px rgba(37, 40, 43, 0.12); background-color: #ffffff; overflow: visible; border-radius: 4px; padding: 0; display: none; }
+.miltiselect { position: absolute; top: 113%; right: 0; z-index: 9; width: 100%; -webkit-box-shadow: 0px 0px 8px rgba(37, 40, 43, 0.12); box-shadow: 0px 0px 8px rgba(37, 40, 43, 0.12); background-color: #ffffff; overflow: visible; border-radius: 4px; padding: 0; display: none; }
 
 .miltiselect.show { display: inline-block; }
 
-.miltiselect option { cursor: pointer; padding: 10px; display: block; color: #2c3951; }
+.miltiselect option { cursor: pointer; padding: 10px; display: block; color: #2c3951; padding-left: 25px; }
 
 .miltiselect option:hover { background-color: rgba(0, 126, 255, 0.04); color: #007eff; }
 
 .miltiselect option:hover svg path { stroke: #007eff; }
 
-.miltiselect option[data-divider="true"] { font-size: 12px; color: #828282; padding-bottom: 0; }
+.miltiselect option[data-divider="true"] { font-size: 12px; color: #828282; padding-left: 10px; }
 
 .miltiselect option[data-divider="true"]:hover { background-color: white; color: #828282; cursor: default; }
 
@@ -3118,13 +3118,15 @@ input[type="checkbox"]:checked + label::after { background-image: url("../img/ic
 
 .grid-container .main__inbox__header__icons button { cursor: pointer; background: none; }
 
-.grid-container .main__inbox__header__icons button:hover svg path { stroke: #2f80ed; }
+.grid-container .main__inbox__header__icons button:hover svg path, .grid-container .main__inbox__header__icons button.active svg path { stroke: #2f80ed; }
 
 .grid-container .main__inbox__header__icons__favorite { margin: 0 22px; }
 
 .grid-container .main__inbox__header__icons__favorite svg.is-active path { fill: #ffeb3b; stroke: #ffeb3b; }
 
 .grid-container .main__inbox__header__icons__favorite svg.is-active:hover path { fill: transparent; stroke: #ffeb3b; }
+
+.grid-container .main__inbox__header__icons__filter svg { pointer-events: none; }
 
 .grid-container .main__inbox__body { height: calc(100vh - 115px); overflow-y: auto; }
 
