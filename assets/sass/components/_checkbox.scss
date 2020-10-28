@@ -1,0 +1,19 @@
+input[type="checkbox"] {
+	display: none;
+
+	& + label {
+		cursor: pointer;
+		&::after {
+			content: "";
+			display: block;
+			width: 14px;
+			height: 14px;
+			background: url("../img/icons/empty-checkbox.svg") no-repeat center center;
+		}
+	}
+	&:checked + label {
+		&::after {
+			background-image: url("../img/icons/check.svg");
+		}
+	}
+}

@@ -156,7 +156,7 @@
 							</svg>
 						</button>
 
-						<button class="main__inbox__header__icons__filter">
+						<button class="main__inbox__header__icons__filter" onclick="show_filter()">
 							<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
 								xmlns="http://www.w3.org/2000/svg">
 								<path d="M4 21V14" stroke="#A0A4A8" stroke-width="2" stroke-linecap="round"
@@ -179,9 +179,18 @@
 									stroke-linejoin="round" />
 							</svg>
 						</button>
+
+						<select class="miltiselect" multiple id="miltiselect-filter">
+							<option>option 1</option>
+							<option>option 2</option>
+							<option data-divider="true" disabled>Title</option>
+							<option>option 3</option>
+							<option>option 3</option>
+							<option>option 3</option>
+						</select>
 					</div>
 				</div>
-				<div class="main__inbox">
+				<div class="main__inbox__body">
 					<div class="contact unreaded active">
 						<div class="contact__left">
 							<div class="contact__left__name">
@@ -193,7 +202,8 @@
 								<p class="small italic">What yu’re looking for is prob...</p>
 							</div>
 							<div class="contact__left__info">
-								<img src="./assets/img/icons/check.svg" alt="">
+								<input type="checkbox" id="checkbox-1" checked>
+								<label for="checkbox-1"></label>
 								<p class="small contact-kind sales">Sales</p>
 								<div class="person">
 									<img src="./assets/img/icons/user.svg" alt="">
@@ -218,7 +228,8 @@
 								<p class="small italic">What yu’re looking for is prob...</p>
 							</div>
 							<div class="contact__left__info">
-								<img src="./assets/img/icons/check.svg" alt="">
+								<input type="checkbox" id="checkbox-2" checked>
+								<label for="checkbox-2"></label>
 								<p class="small contact-kind support">Support</p>
 								<div class="person">
 									<img src="./assets/img/icons/user.svg" alt="">
@@ -565,106 +576,111 @@
 						<p class="small">Last Seen: Oct 25, 2020 at 11:25pm</p>
 					</div>
 				</div>
-				<div class="main__profile__info">
-					<table class="w-100">
-						<tbody>
-							<tr>
-								<th><img class="mr-5" src="./assets/img/icons/loacation.svg" alt="locations"></th>
-								<td>
-									<p>Bengaluru, India <span class="italic">(Asia/Kolkata)</span></p>
-								</td>
-							</tr>
-							<tr>
-								<th>
-									<p class="mr-5 ml-1 mt-4 grey">IP</p>
-								</th>
-								<td>
-									<p>104.168.19.20</p>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-					<div class="pt-4 d-flex">
-						<a href="#" class="mr-4"><img src="./assets/img/icons/chrome.svg" alt=""></a>
-						<a href="#" class="mr-4"><img src="./assets/img/icons/apple.svg" alt=""></a>
-						<a href="#" class="mr-4"><img src="./assets/img/icons/laptop.svg" alt=""></a>
-						<a href="#"><img src="./assets/img/icons/link.svg" class="mr-2" alt=""><span class="small">Chat
-								Link</span></a>
+				<div class="main__profile__body">
+					<div class="main__profile__body__info">
+						<table class="w-100">
+							<tbody>
+								<tr>
+									<th><img class="mr-5" src="./assets/img/icons/loacation.svg" alt="locations"></th>
+									<td>
+										<p>Bengaluru, India <span class="italic">(Asia/Kolkata)</span></p>
+									</td>
+								</tr>
+								<tr>
+									<th>
+										<p class="mr-5 ml-1 mt-4 grey">IP</p>
+									</th>
+									<td>
+										<p>104.168.19.20</p>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="pt-4 d-flex">
+							<a href="#" class="mr-4"><img src="./assets/img/icons/chrome.svg" alt=""></a>
+							<a href="#" class="mr-4"><img src="./assets/img/icons/apple.svg" alt=""></a>
+							<a href="#" class="mr-4"><img src="./assets/img/icons/laptop.svg" alt=""></a>
+							<a href="#"><img src="./assets/img/icons/link.svg" class="mr-2" alt=""><span
+									class="small">Chat
+									Link</span></a>
+						</div>
 					</div>
-				</div>
-				<div class="main__profile__contacts">
-					<table class="w-100">
-						<tbody>
-							<tr>
-								<th><img class="mr-4" src="./assets/img/icons/mail.svg" alt="mail"></th>
-								<td>
-									<p class="ml-3 my-2"><a href="mailto:someone@gmail.com">someone@gmail.com</a></p>
-								</td>
-							</tr>
-							<tr>
-								<th><img class="mr-4" src="./assets/img/icons/phone.svg" alt="phone"></th>
-								<td>
-									<p class="ml-3 my-2">+1 9870 5678 789</p>
-								</td>
-							</tr>
-							<tr>
-								<th><img class="mr-4" src="./assets/img/icons/whatsapp.svg" alt="whatsapp"></th>
-								<td>
-									<p class="ml-3 my-2">+1 9870 5678 789</p>
-								</td>
-							</tr>
-							<tr>
-								<th><img class="mr-4" src="./assets/img/icons/messanger.svg" alt="messanger"></th>
-								<td>
-									<p class="ml-3 my-2"><a href="mailto:someone@gmail.com">someone@gmail.com</a></p>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-				<div class="main__profile__properties">
-					<h5>User Properties</h5>
-					<table class="w-100">
-						<tbody>
-							<tr>
-								<th>
-									<p class="small">First seen</p>
-								</th>
-								<td>
-									<p class="my-2">Oct 15, 2020 11:35am</p>
-								</td>
-							</tr>
-							<tr>
-								<th>
-									<p class="small">Sessions</p>
-								</th>
-								<td>
-									<p class="my-2">2</p>
-								</td>
-							</tr>
-							<tr>
-								<th>
-									<p class="small">Tags</p>
-								</th>
-								<td>
-									<form action="" class="my-2">
-										<input class="py-2" type="text" placeholder="Some Tags" value="">
-									</form>
-								</td>
-							</tr>
-							<tr>
-								<th>
-									<p class="small">WhatsApp <br> Subscription</p>
-								</th>
-								<td>
-									<p class="my-2">Yes</p>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-				<div class="main__profile__footprint border-0">
-					<h5>Footprint</h5>
+					<div class="main__profile__body__contacts">
+						<table class="w-100">
+							<tbody>
+								<tr>
+									<th><img class="mr-4" src="./assets/img/icons/mail.svg" alt="mail"></th>
+									<td>
+										<p class="ml-3 my-2"><a href="mailto:someone@gmail.com">someone@gmail.com</a>
+										</p>
+									</td>
+								</tr>
+								<tr>
+									<th><img class="mr-4" src="./assets/img/icons/phone.svg" alt="phone"></th>
+									<td>
+										<p class="ml-3 my-2">+1 9870 5678 789</p>
+									</td>
+								</tr>
+								<tr>
+									<th><img class="mr-4" src="./assets/img/icons/whatsapp.svg" alt="whatsapp"></th>
+									<td>
+										<p class="ml-3 my-2">+1 9870 5678 789</p>
+									</td>
+								</tr>
+								<tr>
+									<th><img class="mr-4" src="./assets/img/icons/messanger.svg" alt="messanger"></th>
+									<td>
+										<p class="ml-3 my-2"><a href="mailto:someone@gmail.com">someone@gmail.com</a>
+										</p>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="main__profile__body__properties">
+						<h5>User Properties</h5>
+						<table class="w-100">
+							<tbody>
+								<tr>
+									<th>
+										<p class="small">First seen</p>
+									</th>
+									<td>
+										<p class="my-2">Oct 15, 2020 11:35am</p>
+									</td>
+								</tr>
+								<tr>
+									<th>
+										<p class="small">Sessions</p>
+									</th>
+									<td>
+										<p class="my-2">2</p>
+									</td>
+								</tr>
+								<tr>
+									<th>
+										<p class="small">Tags</p>
+									</th>
+									<td>
+										<form action="" class="my-2">
+											<input class="py-2" type="text" placeholder="Some Tags" value="">
+										</form>
+									</td>
+								</tr>
+								<tr>
+									<th>
+										<p class="small">WhatsApp <br> Subscription</p>
+									</th>
+									<td>
+										<p class="my-2">Yes</p>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="main__profile__body__footprint border-0">
+						<h5>Footprint</h5>
+					</div>
 				</div>
 			</div>
 			<div class="main__brands">

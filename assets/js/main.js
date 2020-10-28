@@ -27,8 +27,17 @@ $(() => {
 			$("#menu-canned-response").addClass("show")
 		}
 	});
-	$("#menu-canned-response .dropdown-item").click((e)=>{
+	$("#menu-canned-response .dropdown-item").click((e) => {
 		// $('#message-text-field').append($(event.target).attr("value"));
 		$("#menu-canned-response").removeClass("show")
 	});
+
+	// Detect filter multiple sellect height
+	$("#miltiselect-filter").attr("size", $("#miltiselect-filter option").length);
 });
+
+// Toggle filter Multiple select
+function show_filter() {
+	$("#miltiselect-filter").toggleClass("show");
+
+}

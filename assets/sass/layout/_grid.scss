@@ -29,6 +29,7 @@
 
 		&__inbox {
 			&__header {
+				position: relative;
 				padding: 12px 14px;
 				border-bottom: $grid-border;
 				height: 60px;
@@ -70,6 +71,10 @@
 						}
 					}
 				}
+			}
+			&__body {
+				height: calc(100vh - 115px);
+				overflow-y: auto;
 			}
 		}
 
@@ -221,24 +226,29 @@
 					}
 				}
 			}
-			&__info,
-			&__contacts,
-			&__properties,
-			&__footprint {
-				padding: 20px 14px;
-				border-bottom: $grid-border;
-				h5 {
-					margin-bottom: 17px;
-					color: $color-dark-3;
-				}
-				p.small {
-					color: $color-dark-3;
-				}
-				input {
-					border-color: $color-light-3;
-				}
-				p.grey {
-					color: $color-dark-3;
+			&__body {
+				height: calc(100vh - 115px);
+				overflow-y: auto;
+
+				&__info,
+				&__contacts,
+				&__properties,
+				&__footprint {
+					padding: 20px 14px;
+					border-bottom: $grid-border;
+					h5 {
+						margin-bottom: 17px;
+						color: $color-dark-3;
+					}
+					p.small {
+						color: $color-dark-3;
+					}
+					input {
+						border-color: $color-light-3;
+					}
+					p.grey {
+						color: $color-dark-3;
+					}
 				}
 			}
 		}

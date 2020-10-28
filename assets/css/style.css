@@ -3080,6 +3080,28 @@ input { border: 1px solid #e5e5e5; }
 
 .contact__right__is-visitor { margin-top: 15px; border-radius: 24px; border: 1px solid #e5e5e5; font-size: 12px; }
 
+input[type="checkbox"] { display: none; }
+
+input[type="checkbox"] + label { cursor: pointer; }
+
+input[type="checkbox"] + label::after { content: ""; display: block; width: 14px; height: 14px; background: url("../img/icons/empty-checkbox.svg") no-repeat center center; }
+
+input[type="checkbox"]:checked + label::after { background-image: url("../img/icons/check.svg"); }
+
+.miltiselect { position: absolute; top: 100%; left: 0; right: 0; z-index: 9; width: 100%; -webkit-box-shadow: 0px 0px 8px rgba(37, 40, 43, 0.12); box-shadow: 0px 0px 8px rgba(37, 40, 43, 0.12); background-color: #ffffff; overflow: visible; border-radius: 4px; padding: 0; display: none; }
+
+.miltiselect.show { display: inline-block; }
+
+.miltiselect option { cursor: pointer; padding: 10px; display: block; color: #2c3951; }
+
+.miltiselect option:hover { background-color: rgba(0, 126, 255, 0.04); color: #007eff; }
+
+.miltiselect option:hover svg path { stroke: #007eff; }
+
+.miltiselect option[data-divider="true"] { font-size: 12px; color: #828282; padding-bottom: 0; }
+
+.miltiselect option[data-divider="true"]:hover { background-color: white; color: #828282; cursor: default; }
+
 .grid-container { height: 100vh; display: -ms-grid; display: grid; -ms-grid-columns: 65px 1fr; grid-template-columns: 65px 1fr; -ms-grid-rows: 55px 1fr; grid-template-rows: 55px 1fr; grid-template-areas: "sidenav header" "sidenav main"; }
 
 .grid-container .main-header { -ms-grid-row: 1; -ms-grid-column: 2; grid-area: header; border-bottom: 1px solid #e5e5e5; padding: 12px 14px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
@@ -3088,7 +3110,7 @@ input { border: 1px solid #e5e5e5; }
 
 .grid-container .main { -ms-grid-row: 2; -ms-grid-column: 2; grid-area: main; display: -ms-grid; display: grid; -ms-grid-columns: 0.67fr 1fr 0.46fr 55px; grid-template-columns: 0.67fr 1fr 0.46fr 55px; -ms-grid-rows: 1fr; grid-template-rows: 1fr; }
 
-.grid-container .main__inbox__header { padding: 12px 14px; border-bottom: 1px solid #e5e5e5; height: 60px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
+.grid-container .main__inbox__header { position: relative; padding: 12px 14px; border-bottom: 1px solid #e5e5e5; height: 60px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
 
 .grid-container .main__inbox__header__dropdown { margin-right: 18px; -webkit-box-flex: 1; -ms-flex: 1; flex: 1; }
 
@@ -3103,6 +3125,8 @@ input { border: 1px solid #e5e5e5; }
 .grid-container .main__inbox__header__icons__favorite svg.is-active path { fill: #ffeb3b; stroke: #ffeb3b; }
 
 .grid-container .main__inbox__header__icons__favorite svg.is-active:hover path { fill: transparent; stroke: #ffeb3b; }
+
+.grid-container .main__inbox__body { height: calc(100vh - 115px); overflow-y: auto; }
 
 .grid-container .main__messanger { border-left: 1px solid #e5e5e5; border-right: 1px solid #e5e5e5; background-color: #f9f8fc; }
 
@@ -3156,15 +3180,17 @@ input { border: 1px solid #e5e5e5; }
 
 .grid-container .main__profile__header__info p { color: #a0a4a8; font-size: 11px; }
 
-.grid-container .main__profile__info, .grid-container .main__profile__contacts, .grid-container .main__profile__properties, .grid-container .main__profile__footprint { padding: 20px 14px; border-bottom: 1px solid #e5e5e5; }
+.grid-container .main__profile__body { height: calc(100vh - 115px); overflow-y: auto; }
 
-.grid-container .main__profile__info h5, .grid-container .main__profile__contacts h5, .grid-container .main__profile__properties h5, .grid-container .main__profile__footprint h5 { margin-bottom: 17px; color: #828282; }
+.grid-container .main__profile__body__info, .grid-container .main__profile__body__contacts, .grid-container .main__profile__body__properties, .grid-container .main__profile__body__footprint { padding: 20px 14px; border-bottom: 1px solid #e5e5e5; }
 
-.grid-container .main__profile__info p.small, .grid-container .main__profile__contacts p.small, .grid-container .main__profile__properties p.small, .grid-container .main__profile__footprint p.small { color: #828282; }
+.grid-container .main__profile__body__info h5, .grid-container .main__profile__body__contacts h5, .grid-container .main__profile__body__properties h5, .grid-container .main__profile__body__footprint h5 { margin-bottom: 17px; color: #828282; }
 
-.grid-container .main__profile__info input, .grid-container .main__profile__contacts input, .grid-container .main__profile__properties input, .grid-container .main__profile__footprint input { border-color: #dbdde0; }
+.grid-container .main__profile__body__info p.small, .grid-container .main__profile__body__contacts p.small, .grid-container .main__profile__body__properties p.small, .grid-container .main__profile__body__footprint p.small { color: #828282; }
 
-.grid-container .main__profile__info p.grey, .grid-container .main__profile__contacts p.grey, .grid-container .main__profile__properties p.grey, .grid-container .main__profile__footprint p.grey { color: #828282; }
+.grid-container .main__profile__body__info input, .grid-container .main__profile__body__contacts input, .grid-container .main__profile__body__properties input, .grid-container .main__profile__body__footprint input { border-color: #dbdde0; }
+
+.grid-container .main__profile__body__info p.grey, .grid-container .main__profile__body__contacts p.grey, .grid-container .main__profile__body__properties p.grey, .grid-container .main__profile__body__footprint p.grey { color: #828282; }
 
 .grid-container .main__brands { border-left: 1px solid #e5e5e5; text-align: center; }
 

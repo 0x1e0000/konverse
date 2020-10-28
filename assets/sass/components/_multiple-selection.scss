@@ -1,0 +1,45 @@
+.miltiselect {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	right: 0;
+	z-index: 9;
+	width: 100%;
+	box-shadow: $shadow-1;
+	background-color: $color-white;
+	overflow: visible;
+	border-radius: 4px;
+	padding: 0;
+	display: none;
+
+	&.show {
+		display: inline-block;
+	}
+	option {
+		cursor: pointer;
+		padding: 10px;
+		display: block;
+		color: $color-secondary-1;
+		// background-color: white;
+		&:hover {
+			background-color: rgba($color-secondary-3, 0.04);
+			color: $color-secondary-3;
+			svg {
+				path {
+					stroke: $color-secondary-3;
+				}
+			}
+		}
+		&[data-divider="true"] {
+			font-size: $font-size-sm;
+			color: $color-dark-3;
+			padding-bottom: 0;
+
+			&:hover {
+				background-color: white;
+				color: $color-dark-3;
+				cursor: default;
+			}
+		}
+	}
+}
